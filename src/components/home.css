@@ -1,0 +1,28 @@
+.home__container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  background-image: url("https://i.pinimg.com/originals/90/a4/e1/90a4e1aba6a1003c529cdc731d721038.jpg");
+  background-repeat: repeat-x;
+}
+.home__select {
+  display: flex;
+  width: 800px;
+  justify-content: center;
+  align-items: center;
+  background: rgb(38, 213, 64);
+  height: 400px;
+  border-radius: 30px;
+}
+.home__selectButton {
+  padding: 10px 40px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-family: "Bangers", cursive;
+  font-size: 20px;
+  height: 60px;
+  margin: 30px;
+  background: wheat;
+  border-radius: 10px;
+}

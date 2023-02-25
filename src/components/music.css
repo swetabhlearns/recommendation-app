@@ -1,0 +1,15 @@
+.music {
+  min-height: 100vh;
+  background: #94a3b8;
+}
+.music__header {
+  background-color: #dbeafe;
+  height: 200px;
+  border-radius: 0 0 30px 30px;
+}
+button {
+  margin: 0;
+}
+.container {
+  padding: 30px;
+}

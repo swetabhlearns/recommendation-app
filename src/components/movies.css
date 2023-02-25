@@ -1,0 +1,66 @@
+.movies {
+  background: #94a3b8;
+  min-height: 100vh;
+}
+
+.movies__select {
+  background: #dbeafe;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  height: 200px;
+}
+.movies__selectFilter > input,
+select,
+button {
+  margin: 30px;
+}
+input[type="date"],
+select,
+button {
+  background-color: #0080ff;
+  padding: 15px;
+  font-family: "Roboto Mono", monospace;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  height: 60px;
+}
+::-webkit-calendar-picker-indicator {
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.movies__displayContainer {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  font-family: Poppins;
+  min-height: 400px;
+}
+.movies__display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card {
+  width: 300px;
+  min-height: 350px;
+}
+.carousel {
+  min-height: 400px;
+  min-width: 400px;
+}
+.carousel > img {
+  height: 400px;
+}
+.movie__border {
+  height: 10px;
+  width: 100vb;
+  border: 1px solid wheat;
+}
