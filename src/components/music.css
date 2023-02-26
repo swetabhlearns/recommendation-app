@@ -13,3 +13,6 @@ button {
 .container {
   padding: 30px;
 }
+.music__body > .card {
+  margin-right: 10px;
+}
