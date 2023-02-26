@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./books.css";
+import NavBar from "./NavBar";
 const Books = () => {
   const [query, setQuery] = useState("");
   const [booksByAuthor, setBooksByAuthor] = useState([]);
@@ -26,6 +27,7 @@ const Books = () => {
 
   return (
     <div className="books">
+      <NavBar />
       <div className="books__container">
         <div className="books__nav">
           <form className="books__search">

@@ -3,6 +3,7 @@ import { Card, Container, Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./movies.css";
+import NavBar from "./NavBar";
 const Movies = () => {
   const [genre, setGenre] = useState([]);
   const [genreId, setGenreId] = useState(null);
@@ -39,6 +40,7 @@ const Movies = () => {
 
   return (
     <div className="movies">
+      <NavBar />
       <div className="movies__container">
         <div className="movies__select">
           <div className="movies__selectFilter">
@@ -68,6 +70,9 @@ const Movies = () => {
             <div className="movies__display">
               <div className="display__header">
                 <Container>
+                  <div className="movie__recommendation">
+                    <h5>✨ Our Recommendation ✨</h5>
+                  </div>
                   <Card>
                     <Card.Img
                       src={`https://image.tmdb.org/t/p/w500${movieByGenre[randomMovie].poster_path}`}
@@ -77,14 +82,13 @@ const Movies = () => {
                       <Card.Title>{movieByGenre[randomMovie].title}</Card.Title>
                     </Card.Body>
                   </Card>
-                  <div className="movie__recommendation">
-                    <h5>✨ Our Recommendation ✨</h5>
-                  </div>
                 </Container>
               </div>
-              <div className="movie__border"></div>
+              {/* <div className="movie__border"></div> */}
               <div className="movie__carousel">
-                <h2>YOU MIGHT ALSO LIKE:</h2>
+                <div className="movie__carousel__header">
+                  <h5>You might also like👀:</h5>
+                </div>
                 <Carousel>
                   {movieByGenre.map((movie) => {
                     return (
@@ -101,9 +105,6 @@ const Movies = () => {
             </div>
           )}
         </div>
-        {/* <div className="movie__carousel">
-            {movieByGenre.length > 0 && <h1>CAROUSEL DISPLAY</h1>}{" "}
-          </div> */}
       </div>
     </div>
   );

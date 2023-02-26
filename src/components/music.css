@@ -10,7 +10,7 @@
 button {
   margin: 0;
 }
-.container {
+.music__header .container {
   padding: 30px;
 }
 .music__body > .card {

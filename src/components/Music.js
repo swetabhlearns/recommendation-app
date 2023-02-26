@@ -9,6 +9,7 @@ import {
   Row,
   Card,
 } from "react-bootstrap";
+import NavBar from "./NavBar";
 
 const CLIENT_ID = "4ad1ae9c4a9047f695d3bdd6de921209";
 const CLIENT_SECRET = "616a11b3572d426d8cfdab73eb468bdc";
@@ -74,6 +75,8 @@ const Music = () => {
   }
   return (
     <div className="music">
+      <NavBar />
+
       <div className="music__header">
         <Container>
           <InputGroup className="mb-3" size="lg">

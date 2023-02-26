@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Card, Container, Carousel } from "react-bootstrap";
+import { Card, Container, Carousel, Navbar, Nav } from "react-bootstrap";
+import NavBar from "./NavBar";
 
 import "./series.css";
 const Series = () => {
@@ -37,13 +38,10 @@ const Series = () => {
   const handleFilter = () => {
     fetchMovie();
   };
-  const handleRandomSeries = () => {
-    let randomIndex = Math.floor(Math.random() * seriesByGenre.length);
-    setRandomSeries(randomIndex);
-  };
 
   return (
     <div className="series">
+      <NavBar />
       <div className="series__container">
         <div className="series__select">
           <div className="series__selectFilter">
@@ -64,7 +62,7 @@ const Series = () => {
             </select>
             <input type="date" onChange={handleDate} />
             <button className="series__filterButton" onClick={handleFilter}>
-              filter
+              Search
             </button>
           </div>
         </div>
@@ -72,26 +70,20 @@ const Series = () => {
           {seriesByGenre.length > 0 && (
             <div className="series__display">
               <div className="display__header">
-                <h1>{seriesByGenre[randomSeries].name}</h1>
                 <Container>
+                  <div className="movie__recommendation">
+                    <h5>✨ Our Recommendation ✨</h5>
+                  </div>
                   <Card>
                     <Card.Img
                       src={`https://image.tmdb.org/t/p/w500${seriesByGenre[randomSeries].poster_path}`}
                       alt="Movie Cover"
                     />
-                    <Card.Body>
-                      <Card.Title>
-                        {seriesByGenre[randomSeries].name}
-                      </Card.Title>
-                    </Card.Body>
                   </Card>
-                  <div className="movie__recommendation">
-                    <h5>✨ Our Recommendation ✨</h5>
-                  </div>
                 </Container>
               </div>
               <div className="movie__carousel">
-                <h2>YOU MIGHT ALSO LIKE:</h2>
+                <h5>You might also like👀:</h5>
                 <Carousel>
                   {seriesByGenre.map((series) => {
                     return (
@@ -104,11 +96,6 @@ const Series = () => {
                     );
                   })}
                 </Carousel>
-              </div>
-              <div className="display__button">
-                <button onClick={handleRandomSeries}>
-                  NEXT RECOMMENDATION
-                </button>
               </div>
             </div>
           )}
