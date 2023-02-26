@@ -36,16 +36,7 @@ const Movies = () => {
   const handleFilter = () => {
     fetchMovie();
   };
-  const handleRandomMovies = () => {
-    const randomIndex = Math.floor(Math.random() * movieByGenre.length);
-    if (randomIndex === randomMovie) {
-      randomIndex = randomIndex + 1;
-    }
-    setRandomMovie(randomIndex);
-  };
-  // useEffect(() => {
-  //   fetchMovie();
-  // }, [genreId]);
+
   return (
     <div className="movies">
       <div className="movies__container">
@@ -56,6 +47,9 @@ const Movies = () => {
               id="movie__genre"
               onChange={handleGenreChange}
             >
+              <option value="" selected disabled hidden>
+                Select Genre
+              </option>
               {genre.map((genre) => (
                 <option key={genre.id} value={genre.id}>
                   {" "}
@@ -83,6 +77,9 @@ const Movies = () => {
                       <Card.Title>{movieByGenre[randomMovie].title}</Card.Title>
                     </Card.Body>
                   </Card>
+                  <div className="movie__recommendation">
+                    <h5>✨ Our Recommendation ✨</h5>
+                  </div>
                 </Container>
               </div>
               <div className="movie__border"></div>
@@ -105,8 +102,8 @@ const Movies = () => {
           )}
         </div>
         {/* <div className="movie__carousel">
-          {movieByGenre.length > 0 && <h1>CAROUSEL DISPLAY</h1>}{" "}
-        </div> */}
+            {movieByGenre.length > 0 && <h1>CAROUSEL DISPLAY</h1>}{" "}
+          </div> */}
       </div>
     </div>
   );

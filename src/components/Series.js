@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Card, Container, Carousel } from "react-bootstrap";
+
 import "./series.css";
 const Series = () => {
   const [genre, setGenre] = useState([]);
@@ -50,6 +52,9 @@ const Series = () => {
               id="series__genre"
               onChange={handleGenreChange}
             >
+              <option value="" selected disabled hidden>
+                Select Genre
+              </option>
               {genre.map((genre) => (
                 <option key={genre.id} value={genre.id}>
                   {" "}
@@ -68,6 +73,37 @@ const Series = () => {
             <div className="series__display">
               <div className="display__header">
                 <h1>{seriesByGenre[randomSeries].name}</h1>
+                <Container>
+                  <Card>
+                    <Card.Img
+                      src={`https://image.tmdb.org/t/p/w500${seriesByGenre[randomSeries].poster_path}`}
+                      alt="Movie Cover"
+                    />
+                    <Card.Body>
+                      <Card.Title>
+                        {seriesByGenre[randomSeries].name}
+                      </Card.Title>
+                    </Card.Body>
+                  </Card>
+                  <div className="movie__recommendation">
+                    <h5>✨ Our Recommendation ✨</h5>
+                  </div>
+                </Container>
+              </div>
+              <div className="movie__carousel">
+                <h2>YOU MIGHT ALSO LIKE:</h2>
+                <Carousel>
+                  {seriesByGenre.map((series) => {
+                    return (
+                      <Carousel.Item key={series.id}>
+                        <img
+                          src={`https://image.tmdb.org/t/p/w500${series.poster_path}`}
+                          alt="thumbnail"
+                        />
+                      </Carousel.Item>
+                    );
+                  })}
+                </Carousel>
               </div>
               <div className="display__button">
                 <button onClick={handleRandomSeries}>

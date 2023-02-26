@@ -51,15 +51,20 @@ const Books = () => {
           <div className="books__carousel__container">
             <div className="books__carousel">
               <Carousel>
-                {booksByAuthor.map((book) => (
-                  <Carousel.Item key={book.id}>
-                    <img
-                      src={book.volumeInfo.imageLinks.thumbnail}
-                      alt="thumbnail"
-                    />
-                    <Carousel.Caption></Carousel.Caption>
-                  </Carousel.Item>
-                ))}
+                {booksByAuthor.map((book, i) => {
+                  if (book.volumeInfo.imageLinks) {
+                    console.log(book.volumeInfo.imageLinks.thumbnail, i);
+                    return (
+                      <Carousel.Item key={book.id}>
+                        <img
+                          src={book.volumeInfo.imageLinks.thumbnail}
+                          alt="thumbnail"
+                        />
+                        <h3> {book.volumeInfo.title}</h3>
+                      </Carousel.Item>
+                    );
+                  }
+                })}
               </Carousel>
             </div>
           </div>

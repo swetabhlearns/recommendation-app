@@ -60,7 +60,14 @@ button {
   height: 400px;
 }
 .movie__border {
-  height: 10px;
   width: 100vb;
   border: 1px solid wheat;
+  margin-bottom: 10px;
+}
+.movies__displayContainer > .container {
+  width: 350px;
+}
+.container > .movie__recommendation {
+  margin-top: 20px;
+  width: 450px;
 }
